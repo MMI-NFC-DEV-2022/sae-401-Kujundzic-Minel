@@ -17,24 +17,12 @@ onMounted(fetchFilms)
 
 <template>
   <div>
-    <h1 class="font-bold text-4xl">Les films du moment</h1>
+    <h1 class="pl-16 font-bold text-4xl">Les films du moment</h1>
     <div>
-      <div v-for="film in films" :key="film.id" class="film">
-        <img :src="film.film_cover" alt="Cover image" />
-        <h2>{{ film.film_name }}</h2>
+      <div v-for="film in films" :key="film.id" class="pl-16">
+        <img :src="film.film_cover" alt="Cover image" class="rounded-lg h-80 w-80 object-cover object-top my-4" />
+        <h2 class="font-semibold text-xl pl-6 -my-2">{{ film.film_name }}</h2>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.film {
-  margin-bottom: 20px;
-}
-.film h2 {
-  margin: 0;
-}
-.film p {
-  margin: 5px 0;
-}
-</style>
