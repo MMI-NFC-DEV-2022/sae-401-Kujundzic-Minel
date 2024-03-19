@@ -1,47 +1,69 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
 import { supabase } from '@/supabase'
-
+import { useRoute } from 'vue-router'
 const route = useRoute()
-const filmId = route.params.id
-const film = ref(null)
-const error = ref(null)
+const { data: FilmsData } = await supabase
+  .from('films')
+  .select('*')
+  .eq('id', route.params.id)
+  .single()
+const { data: FilmsSupports } = await supabase
+  .from('support_film')
+  .select('id_support,support(support_name)')
+  .eq('id_film', route.params.id)
+const { data: FilmsActeurs } = await supabase
+  .from('acteurs_films')
+  .select('id_acteur,acteurs(actor_name, actor_first_name, actor_img)')
+  .eq('id_film', route.params.id)
 
-onMounted(async () => {
-  const { data, error: fetchError } = await supabase
-    .from('films')
-    .select('*')
-    .eq('id', filmId)
-    .single()
-
-  film.value = data
-  error.value = fetchError
-})
+// console.log(FilmsData)
+// console.log(FilmsSupports)
+console.log(FilmsActeurs)
 </script>
-
 <template>
-  <div class="overflow-x-hidden">
-    <div v-if="film" class="w-[110vw] flex flex-col">
-      <img
-        :src="film.film_cover"
-        alt="Film cover image"
-        class="h-96 w-full object-cover object-center my-4 -ml-[5vw] blur-sm relative"
-      />
-      <img
-        :src="film.film_cover"
-        alt="Film cover image"
-        class="rounded-lg w-44 object-cover object-center absolute right-0 mr-4 mt-8"
-      />
-      <h2 class="font-semibold text-xl pl-6 -my-2">{{ film.film_name }}</h2>
-      <p class="pl-6">{{ film.film_synopsis }}</p>
-      <p class="pl-6">{{ film.film_sortie }}</p>
-      <p class="pl-6">{{ film.film_favoris }}</p>
+  <div
+    :style="{
+      'background-image':
+        'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' +
+        FilmsData!.film_cover +
+        ')',
+      'background-size': 'cover',
+      'background-position': 'top',
+      'background-repeat': 'no-repeat'
+    }"
+    class="p-5 flex flex-col justify-between"
+  >
+    <div class="flex justify-between w-full pb-5">
+      <h1 class="text-custom-white text-white text-xl font-bold">{{ FilmsData!.film_name }}</h1>
+      <div>favori</div>
     </div>
-
-    <div v-else>
-      <p v-if="error">{{ error }}</p>
-      <p v-else>Chargement des détails du film...</p>
+    <div class="flex justify-between">
+      <div class="w-1/2 flex flex-col justify-between">
+        <div class="flex flex-col">
+          <span class="text-custom-white text-white text-base">{{ FilmsData!.film_sortie }}</span>
+          <span class="text-custom-white text-white text-base">{{ FilmsData!.film_duree }}</span>
+        </div>
+        <div>genre et notes</div>
+      </div>
+      <div class="w-1/3">
+        <img :src="FilmsData!.film_cover" class="rounded-md" alt="" />
+      </div>
+      <div class="text-white">
+        <h2>Supports</h2>
+        <div v-for="Unsupport in FilmsSupports">
+          <p>{{ Unsupport.support.support_name }}</p>
+        </div>
+      </div>
     </div>
+  </div>
+  <div>
+    <h2>synopsis</h2>
+    <p>{{ FilmsData!.film_synopsis }}</p>
+  </div>
+  <h2>Acteurs</h2>
+  <div v-for="Unacteur in FilmsActeurs">
+    <p>{{ Unacteur.acteurs.actor_name }}</p>
+    <p>{{ Unacteur.acteurs.actor_first_name }}</p>
+    <img :src="Unacteur.acteurs.actor_img" alt="IMAGE" />
   </div>
 </template>
