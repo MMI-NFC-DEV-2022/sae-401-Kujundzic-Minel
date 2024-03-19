@@ -2,5 +2,6 @@
 
 Mon nom et prénom : KUJUNDZIC Minel
 URL du site : https://sae401-kujundzic.netlify.app/
+URL Avec domaine : https://nema.kujundzic.fr/
 Lien vers les types TypeScript exporté depuis Supabase : 
 Descriptif des pages et fonctionnalités développées et avec liens : 
