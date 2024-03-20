@@ -59,10 +59,10 @@ console.log(FilmsData)
     </div>
   </div>
   <div class="flex justify-center">
-    <button class="bg-[#F5C754] text-[#272727] font-bold py-3 w-3/4 rounded-lg mb-5">
-      Voir toutes les offres Support
-    </button>
-  </div>
+  <router-link :to="`/supports/${FilmsData.id}`" class="bg-[#F5C754] text-[#272727] font-bold py-3 w-3/4 rounded-lg mb-5 text-center block">
+    Voir toutes les offres Support
+  </router-link>
+</div>
   <div class="bg-[#272727] text-white p-5">
     <div class="bg-[#272727] text-white p-5">
     <h2 class="text-xl font-bold">Support physique :</h2>
