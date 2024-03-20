@@ -55,4 +55,5 @@ const showMenu = ref(true)
       <Login />
     </nav>
   </header>
+  <div class="w-full bg-[#272727] border"></div>
 </template>
