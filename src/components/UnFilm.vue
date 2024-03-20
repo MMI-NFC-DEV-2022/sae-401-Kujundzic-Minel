@@ -90,10 +90,10 @@ console.log(FilmsData)
       </div>
     </div>
   </div>
-  <div class=" m-5">
-    <h2>Collections : </h2>
+  <div v-if="FilmsData.collection_film && FilmsData.collection_film.length > 0" class="m-5">
+    <h2 class="font-bold text-xl">Collections :</h2>
     <div class="flex flex-wrap">
-      <div v-for="collectionFilm in FilmsData.collection_film" class="p-5">
+      <div v-for="collectionFilm in FilmsData.collection_film" :key="collectionFilm.id" class="p-5">
         <img :src="collectionFilm.collection.collection_img" alt="Image de la collection" class="rounded-lg w-40">
         <p>{{ collectionFilm.collection.collection_name }}</p>
       </div>

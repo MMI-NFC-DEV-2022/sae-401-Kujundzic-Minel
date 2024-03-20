@@ -49,10 +49,9 @@ const showMenu = ref(true)
       :class="{ flex: showMenu, hidden: !showMenu }"
       class="flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6"
     >
-      <a href="/" class="hover:text-gray-300">Accueil</a>
-      <a href="/films" class="hover:text-gray-300">Films</a>
-      <a href="/acteurs" class="hover:text-gray-300">Acteurs</a>
-      <RouterLink to="/films" class="hover:text-gray-300">films2</RouterLink>
+      <RouterLink to="/" class="hover:text-gray-300">Accueil</RouterLink>
+      <RouterLink to="/films" class="hover:text-gray-300">Films</RouterLink>
+      <RouterLink to="/acteurs" class="hover:text-gray-300">Acteurs</RouterLink>
       <Login />
     </nav>
   </header>
