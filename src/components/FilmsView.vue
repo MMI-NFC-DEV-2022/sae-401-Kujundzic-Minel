@@ -33,12 +33,14 @@ onMounted(fetchFilms)
     </div>
     <div class="mt-8 bg-[#272727] p-5 rounded-lg text-center">
       <p class="text-white font-bold text-2xl mb-4">Rejoins la communauté dès maintenant !</p>
-      <button
-        type="submit"
-        class="bg-[#F5C754] hover:bg-[#bb9841] text-[#272727] font-bold py-2 px-4 rounded"
-      >
-        Inscription
-      </button>
+      <router-link to="/signin">
+        <button
+          type="submit"
+          class="bg-[#F5C754] hover:bg-[#bb9841] text-[#272727] font-bold py-2 px-4 rounded"
+        >
+          Inscription
+        </button>
+      </router-link>
     </div>
   </div>
 </template>

@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import FilmsView from '@/components/FilmsView.vue'
+</script>
 
 <template>
   <div>
-    <h1>Home</h1>
+    <FilmsView />
   </div>
 </template>

@@ -50,7 +50,6 @@ const showMenu = ref(true)
       class="flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6"
     >
       <RouterLink to="/" class="hover:text-gray-300">Accueil</RouterLink>
-      <RouterLink to="/films" class="hover:text-gray-300">Films</RouterLink>
       <RouterLink to="/acteurs" class="hover:text-gray-300">Acteurs</RouterLink>
       <Login />
     </nav>
