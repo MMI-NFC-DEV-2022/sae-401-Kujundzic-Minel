@@ -13,16 +13,16 @@ const { data: FilmsActeurs } = await supabase
   .select('films(id, film_name, film_cover)')
   .eq('id_acteur', route.params.id)
 </script>
+
 <template>
   <div>
-    <h1>Acteurs</h1>
-    <div class="justify-between w-full pb-5">
+    <div class=" justify-between w-full pb-5">
       <img
         :src="ActeurData!.actor_img"
         alt="Cover image"
         class="rounded-lg h-80 w-80 object-cover object-top my-4"
       />
-      <h1 class="text-black text-xl font-bold">
+      <h1 class="text-black text-xl">
         {{ ActeurData!.actor_name }} {{ ActeurData!.actor_first_name }}
       </h1>
     </div>
@@ -34,9 +34,9 @@ const { data: FilmsActeurs } = await supabase
       <img
         :src="filmacteur.films.film_cover"
         alt="Cover image"
-        class="rounded-lg h-80 w-80 object-cover object-top"
+        class="rounded-lg h-40 w-40 object-cover object-top mt-4"
       />
-      <h1 class="text-black text-xl font-bold">{{ filmacteur.films.film_name }}</h1>
+      <h1 class="text-[#272727] text-xl">{{ filmacteur.films.film_name }}</h1>
     </router-link>
   </div>
 </template>

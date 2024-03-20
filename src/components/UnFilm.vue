@@ -63,14 +63,14 @@ console.log(FilmsActeurs)
   <h2>Acteurs</h2>
   <div v-for="Unacteur in FilmsActeurs">
     <router-link :to="`/acteurs/${Unacteur.id_acteur}`">
-      <p class="text-white text-xl font-bold">
-        {{ Unacteur.acteurs.actor_name }} {{ Unacteur.acteurs.actor_first_name }}
-      </p>
       <img
         :src="Unacteur.acteurs.actor_img"
         alt="Image de l'acteur"
-        class="w-32 h-32 object-cover"
+        class="rounded-lg h-40 w-40 object-cover object-top mt-4"
       />
+      <p class="text-[#272727] text-xl">
+        {{ Unacteur.acteurs.actor_name }} {{ Unacteur.acteurs.actor_first_name }}
+      </p>
     </router-link>
   </div>
 </template>
