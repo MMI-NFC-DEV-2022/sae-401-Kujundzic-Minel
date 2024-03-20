@@ -60,7 +60,7 @@ console.log(FilmsData)
   </div>
   <div class="flex justify-center">
     <button class="bg-[#F5C754] text-[#272727] font-bold py-3 w-3/4 rounded-lg mb-5">
-      Voir toutes les offres
+      Voir toutes les offres Support
     </button>
   </div>
   <div class="bg-[#272727] text-white p-5">
@@ -90,12 +90,14 @@ console.log(FilmsData)
       </div>
     </div>
   </div>
-  <div v-if="FilmsData.collection_film && FilmsData.collection_film.length > 0" class="m-5">
+  <div v-if="FilmsData && FilmsData.collection_film && FilmsData.collection_film.length > 0" class="m-5">
     <h2 class="font-bold text-xl">Collections :</h2>
     <div class="flex flex-wrap">
       <div v-for="collectionFilm in FilmsData.collection_film" :key="collectionFilm.id" class="p-5">
-        <img :src="collectionFilm.collection.collection_img" alt="Image de la collection" class="rounded-lg w-40">
-        <p>{{ collectionFilm.collection.collection_name }}</p>
+        <router-link :to="`/collections/${collectionFilm.collection.id}`">
+          <img :src="collectionFilm.collection.collection_img" alt="Image de la collection" class="rounded-lg w-40">
+          <p>{{ collectionFilm.collection.collection_name }}</p>
+        </router-link>
       </div>
     </div>  
   </div>
