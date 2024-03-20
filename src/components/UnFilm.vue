@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { supabase } from '@/supabase'
+import { log } from 'console';
 import { useRoute } from 'vue-router'
 const route = useRoute()
 const { data: FilmsData } = await supabase
@@ -8,10 +9,12 @@ const { data: FilmsData } = await supabase
     *,
     support_film(*, support(*)),
     physique_film(*, physique(*)),
-    acteurs_films(*, acteurs(*))
+    acteurs_films(*, acteurs(*)),
+    collection_film(*, collection(*))
   `)
   .eq('id', route.params.id)
   .single()
+console.log(FilmsData)
 </script>
 
 <template>
@@ -86,5 +89,14 @@ const { data: FilmsData } = await supabase
         </router-link>
       </div>
     </div>
+  </div>
+  <div class=" m-5">
+    <h2>Collections : </h2>
+    <div class="flex flex-wrap">
+      <div v-for="collectionFilm in FilmsData.collection_film" class="p-5">
+        <img :src="collectionFilm.collection.collection_img" alt="Image de la collection" class="rounded-lg w-40">
+        <p>{{ collectionFilm.collection.collection_name }}</p>
+      </div>
+    </div>  
   </div>
 </template>

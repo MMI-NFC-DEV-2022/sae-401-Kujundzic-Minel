@@ -52,6 +52,7 @@ const showMenu = ref(true)
       <a href="/" class="hover:text-gray-300">Accueil</a>
       <a href="/films" class="hover:text-gray-300">Films</a>
       <a href="/acteurs" class="hover:text-gray-300">Acteurs</a>
+      <RouterLink to="/films" class="hover:text-gray-300">films2</RouterLink>
       <Login />
     </nav>
   </header>
