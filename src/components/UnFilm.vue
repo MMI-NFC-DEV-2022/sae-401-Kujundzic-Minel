@@ -76,7 +76,7 @@ const { data: FilmsPhysiques } = await supabase
         <img
           :src="UnPhysique.physique!.physique_img"
           alt=""
-          class="w-full aspect-square object-cover"
+          class="w-full lg:w-1/3 rounded-lg aspect-square object-cover"
         />
         <p>{{ UnPhysique.physique.physique_name }}</p>
       </div>
