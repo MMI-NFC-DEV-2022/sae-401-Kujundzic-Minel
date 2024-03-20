@@ -18,7 +18,7 @@ const { data: FilmsActeurs } = await supabase
 
 // console.log(FilmsData)
 // console.log(FilmsSupports)
-console.log(FilmsActeurs)
+console.log(FilmsActeurs) 
 </script>
 <template>
   <div
@@ -66,4 +66,4 @@ console.log(FilmsActeurs)
     <p>{{ Unacteur.acteurs.actor_first_name }}</p>
     <img :src="Unacteur.acteurs.actor_img" alt="IMAGE" />
   </div>
-</template> 
+</template>
