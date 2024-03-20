@@ -17,19 +17,23 @@ const fetchActeurs = async () => {
 }
 
 onMounted(fetchActeurs)
-</script> 
-
+</script>
 
 <template>
   <div>
     <div class="flex">
       <div v-for="acteur in acteurs" :key="acteur.id" class="pl-16">
         <router-link :to="`/acteurs/${acteur.id}`">
-          <img :src="acteur.actor_img" alt="Cover image" class="rounded-lg h-80 w-80 object-cover object-top my-4" />
-          <h2 class="font-semibold text-xl pl-6 -my-2">{{ acteur.actor_name }} {{ acteur.actor_first_name }}</h2>
+          <img
+            :src="acteur.actor_img"
+            alt="Cover image"
+            class="rounded-lg h-80 w-80 object-cover object-top my-4"
+          />
+          <h2 class="font-semibold text-xl pl-6 -my-2">
+            {{ acteur.actor_name }} {{ acteur.actor_first_name }}
+          </h2>
         </router-link>
       </div>
     </div>
   </div>
 </template>
-

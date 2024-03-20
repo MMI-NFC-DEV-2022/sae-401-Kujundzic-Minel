@@ -18,7 +18,7 @@ const { data: FilmsActeurs } = await supabase
 
 // console.log(FilmsData)
 // console.log(FilmsSupports)
-console.log(FilmsActeurs) 
+console.log(FilmsActeurs)
 </script>
 <template>
   <div
@@ -34,14 +34,14 @@ console.log(FilmsActeurs)
     class="p-5 flex flex-col justify-between"
   >
     <div class="flex justify-between w-full pb-5">
-      <h1 class="text-custom-white text-white text-xl font-bold">{{ FilmsData!.film_name }}</h1>
+      <h1 class="text-white text-xl font-bold">{{ FilmsData!.film_name }}</h1>
       <div>favori</div>
     </div>
     <div class="flex justify-between">
       <div class="w-1/2 flex flex-col justify-between">
         <div class="flex flex-col">
-          <span class="text-custom-white text-white text-base">{{ FilmsData!.film_sortie }}</span>
-          <span class="text-custom-white text-white text-base">{{ FilmsData!.film_duree }}</span>
+          <span class="text-white text-base">{{ FilmsData!.film_sortie }}</span>
+          <span class="text-white text-base">{{ FilmsData!.film_duree }}</span>
         </div>
         <div>genre et notes</div>
       </div>
@@ -62,8 +62,15 @@ console.log(FilmsActeurs)
   </div>
   <h2>Acteurs</h2>
   <div v-for="Unacteur in FilmsActeurs">
-    <p>{{ Unacteur.acteurs.actor_name }}</p>
-    <p>{{ Unacteur.acteurs.actor_first_name }}</p>
-    <img :src="Unacteur.acteurs.actor_img" alt="IMAGE" />
+    <router-link :to="`/acteurs/${Unacteur.id_acteur}`">
+      <p class="text-white text-xl font-bold">
+        {{ Unacteur.acteurs.actor_name }} {{ Unacteur.acteurs.actor_first_name }}
+      </p>
+      <img
+        :src="Unacteur.acteurs.actor_img"
+        alt="Image de l'acteur"
+        class="w-32 h-32 object-cover"
+      />
+    </router-link>
   </div>
 </template>

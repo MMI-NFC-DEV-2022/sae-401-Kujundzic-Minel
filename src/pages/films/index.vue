@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FilmsView from '@/components/FilmsView.vue';
+import FilmsView from '@/components/FilmsView.vue'
 </script>
 
 <template>
@@ -7,4 +7,3 @@ import FilmsView from '@/components/FilmsView.vue';
     <FilmsView />
   </div>
 </template>
-

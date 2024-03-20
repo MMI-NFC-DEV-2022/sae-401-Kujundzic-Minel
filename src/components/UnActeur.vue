@@ -22,7 +22,7 @@ const { data: FilmsActeurs } = await supabase
         alt="Cover image"
         class="rounded-lg h-80 w-80 object-cover object-top my-4"
       />
-      <h1 class="text-custom-white text-black text-xl font-bold">
+      <h1 class="text-black text-xl font-bold">
         {{ ActeurData!.actor_name }} {{ ActeurData!.actor_first_name }}
       </h1>
     </div>
@@ -36,7 +36,7 @@ const { data: FilmsActeurs } = await supabase
         alt="Cover image"
         class="rounded-lg h-80 w-80 object-cover object-top"
       />
-      <h1 class="text-custom-white text-black text-xl font-bold">{{ filmacteur.films.film_name }}</h1>
+      <h1 class="text-black text-xl font-bold">{{ filmacteur.films.film_name }}</h1>
     </router-link>
   </div>
 </template>
