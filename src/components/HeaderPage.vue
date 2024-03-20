@@ -39,7 +39,7 @@ const showMenu = ref(true);
     >
       <a href="/" class="hover:text-gray-300">Accueil</a>
       <a href="/films" class="hover:text-gray-300">Films</a>
-      <a href="/artistes" class="hover:text-gray-300">Artistes</a>
+      <a href="/acteurs" class="hover:text-gray-300">acteurs</a>
       <Login />
     </nav>
   </header>

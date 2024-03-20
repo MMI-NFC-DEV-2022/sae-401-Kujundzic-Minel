@@ -66,4 +66,4 @@ console.log(FilmsActeurs)
     <p>{{ Unacteur.acteurs.actor_first_name }}</p>
     <img :src="Unacteur.acteurs.actor_img" alt="IMAGE" />
   </div>
-</template>
+</template> 
