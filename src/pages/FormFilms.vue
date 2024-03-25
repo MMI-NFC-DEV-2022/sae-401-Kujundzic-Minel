@@ -67,7 +67,7 @@
   const addFilm = async (formData) => {
     console.log(formData); // Utilisé pour vérifier les données reçues
   
-    const { data, error } = await supabase.from('films').insert([
+    const { data, error } = await supabase.from('films_users').insert([
       {
         film_name: formData.film_name,
         film_synopsis: formData.film_synopsis,
