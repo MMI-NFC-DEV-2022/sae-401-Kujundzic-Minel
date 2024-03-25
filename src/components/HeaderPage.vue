@@ -11,7 +11,7 @@ const showMenu = ref(true)
     class="bg-[#faffff] text-[#272727] py-4 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center"
   >
     <div class="flex items-center justify-between w-full md:w-auto">
-      <img src="/img/logo.png" alt="Logo" class="h-10 mr-4" />
+      <router-link to="/"><img src="/img/logo.png" alt="Logo" class="h-10 mr-4" /></router-link>
       <button class="md:hidden" @click="showMenu = !showMenu">
         <svg
           v-if="!showMenu"
