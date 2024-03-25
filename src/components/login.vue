@@ -35,7 +35,7 @@ const signInWithPassword = async () => {
     <div v-else class="flex items-center">
       <form
         @submit.prevent="signInWithPassword"
-        class="flex items-center"
+        class="flex items-center flex-col md:flex-row"
       >
         <input
           type="email"
