@@ -52,8 +52,8 @@ onMounted(async () => {
   
       <!-- Synopsis Section -->
       <div class="synopsis-section mt-5">
-        <h2 class="text-lg font-bold">Synopsis</h2>
-        <p class="mt-2">{{ FilmsUserData.film_synopsis }}</p>
+        <h2 class="mx-5 text-lg font-bold">Synopsis</h2>
+        <p class="mx-5">{{ FilmsUserData.film_synopsis }}</p>
       </div>
   
       <!-- Rest of your component -->

@@ -15,5 +15,5 @@ Descriptif des pages et fonctionnalités développées et avec liens :
 [Page qui affiche tous les supports d'un film et leur information](https://nema.kujundzic.fr/supports/2)
 [Page qui affiche la collection d'un film (Titres des films, covers des films, syposis des films )](https://nema.kujundzic.fr/collections/1)
 [Formulaire pour ajouter des films fonctionnel](https://nema.kujundzic.fr/FormFilms)
-[Page affichant les films ajoutés par des users]()
-[Page affichant les données du film ajouté par des users selon l'id du film]()
+[Page affichant les films ajoutés par des users](https://nema.kujundzic.fr/)
+[Page affichant les données du film ajouté par des users selon l'id du film](https://nema.kujundzic.fr/filmusers/1)
