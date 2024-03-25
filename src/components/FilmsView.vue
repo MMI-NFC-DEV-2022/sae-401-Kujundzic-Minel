@@ -31,6 +31,9 @@ onMounted(fetchFilms)
     <div class="mt-6 flex justify-end">
       <router-link to="/tousfilms"><button class="bg-[#E3E8F2] rounded-lg px-4 py-2 font-semibold">Voir tous les films</button></router-link>
     </div>
+    <div class="mt-6 flex justify-end">
+      <router-link to="/FormFilms"><button class="bg-[#E3E8F2] rounded-lg px-4 py-2 font-semibold">Ajoutez un film</button></router-link>
+    </div>
     <div class="mt-8 bg-[#272727] p-5 rounded-lg text-center">
       <p class="text-white font-bold text-2xl mb-4">Rejoins la communauté dès maintenant !</p>
       <router-link to="/signin">

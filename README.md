@@ -14,3 +14,4 @@ Descriptif des pages et fonctionnalités développées et avec liens :
 [Page d'un film et ses informations (synopsis, Support dématérialisé, Support physique, acteurs, collection s'il y'e a une)](https://nema.kujundzic.fr/films/2)
 [Page qui affiche tous les supports d'un film et leur information](https://nema.kujundzic.fr/supports/2)
 [Page qui affiche la collection d'un film (Titres des films, covers des films, syposis des films )](https://nema.kujundzic.fr/collections/1)
+[Formulaire pour ajouter des films fonctionnel](src\pages\FormFilms.vue)()
