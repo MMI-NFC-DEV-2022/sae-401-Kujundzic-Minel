@@ -74,9 +74,9 @@ console.log(FilmsData)
     </div>
   </div>
     <div class="flex justify-center pb-5">
-      <button class="bg-[#F5C754] text-[#272727] font-bold py-3 w-3/4 rounded-lg">
+      <router-link :to="`/physiques/${FilmsData.id}`" class="bg-[#F5C754] text-[#272727] font-bold py-3 w-3/4 rounded-lg mb-5 text-center block">
         Voir toutes les offres
-      </button>
+      </router-link>
     </div>
   </div>
   <div class="m-5">
