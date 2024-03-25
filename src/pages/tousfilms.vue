@@ -19,7 +19,7 @@ onMounted(fetchFilms)
 </script>
 <template>
   <div class="p-4 md:p-8">
-    <h1 class="text-2xl md:text-4xl font-bold text-center md:text-left mb-6">Les films du moment</h1>
+    <h1 class="text-2xl md:text-4xl font-bold text-center md:text-left mb-6">Tous les films</h1>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div v-for="film in films" :key="film.id" class="rounded-lg overflow-hidden shadow-lg">
         <router-link :to="`/films/${film.id}`" class="block">
@@ -27,20 +27,6 @@ onMounted(fetchFilms)
           <h2 class="text-xl font-semibold p-4">{{ film.film_name }}</h2>
         </router-link>
       </div>
-    </div>
-    <div class="mt-6 flex justify-end">
-      <router-link to="/tousfilms"><button class="bg-[#E3E8F2] rounded-lg px-4 py-2 font-semibold">Voir tous les films</button></router-link>
-    </div>
-    <div class="mt-8 bg-[#272727] p-5 rounded-lg text-center">
-      <p class="text-white font-bold text-2xl mb-4">Rejoins la communauté dès maintenant !</p>
-      <router-link to="/signin">
-        <button
-          type="submit"
-          class="bg-[#F5C754] hover:bg-[#bb9841] text-[#272727] font-bold py-2 px-4 rounded"
-        >
-          Inscription
-        </button>
-      </router-link>
     </div>
   </div>
 </template>

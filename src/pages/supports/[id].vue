@@ -13,7 +13,7 @@ const fetchFilmSupports = async () => {
       *,
       support: support(*)
     `)
-    .eq('id_film', route.params.id); // Assurez-vous que 'id' correspond au paramètre de route pour l'ID du film.
+    .eq('id_film', route.params.id);
 
   if (error) console.error('Error fetching film supports:', error);
   else filmSupports.value = data;
@@ -24,7 +24,7 @@ onMounted(fetchFilmSupports);
 
 <template>
   <div class="p-4">
-    <h2 class="text-2xl font-semibold mb-4">Supports available for this Film</h2>
+    <h2 class="text-2xl font-semibold mb-4">Tous les supports disponibles pour ce film</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div v-for="item in filmSupports" :key="item.support.id" class="rounded overflow-hidden shadow-lg">
         <div class="px-6 py-4">
